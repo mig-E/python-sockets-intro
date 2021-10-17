@@ -1,0 +1,15 @@
+
+
+
+
+
+
+
+
+
+
+
+
+GET that data for a large file:
+
+https://stackoverflow.com/questions/17667903/python-socket-receive-large-amount-of-data
