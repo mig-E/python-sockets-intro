@@ -4,22 +4,17 @@
 #              send a GET request to the specified server and return a 
 #              message to the user.
 
-# This will use the socket API in orger to GET a file. 
-
-# sources
-
+# SOURCES:
 # https://www.codegrepper.com/code-examples/python/http+request+with+socket+python
 # https://zetcode.com/python/socket/
 # https://www.geeks3d.com/hacklab/20190110/python-3-simple-http-request-with-the-socket-module/
 # https://docs.python.org/3/howto/sockets.html
 # https://www.codementor.io/@joaojonesventura/building-a-basic-http-server-from-scratch-in-python-1cedkg0842
 # https://newbedev.com/python-socket-request-python-code-example
-
-
+# Kurose Textbook TCPClient.py example
+#
 # question about the bufsize with recv() method
 # https://stackoverflow.com/questions/1708835/python-socket-receive-incoming-packets-always-have-a-different-size
-
-
 
 # Importing the socket module
 import socket
@@ -28,16 +23,13 @@ HOST = "gaia.cs.umass.edu"
 PORT = 80
 bufsize = 4096
 
-
 # creating a string to process the get request
 uri = "/wireshark-labs/INTRO-wireshark-file1.html"
 get_req = "GET " + uri + " HTTP/1.1\r\nHost:" + HOST + "\r\n\r\n"
 
-
 # created the client socket.
 # AF_INET = IPv4
 # SOCK_STREAM = TCP
-# (followed zetcode example)
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     
     # connect to the specified host and port
@@ -66,11 +58,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         print("[RECV] - length: ", len(data))
         print(data.decode())
         break
-
-
-
-# RECAP
-"""
-The hardest part of this had to be just getting started. It took me a week to feel confident enough to 
-turn this in. (Also didn't help that I overlooked the readings for a way to complete this).
-"""
